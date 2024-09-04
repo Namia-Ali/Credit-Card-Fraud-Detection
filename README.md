@@ -1,67 +1,71 @@
-Credit Card Fraud Detection
+# Credit Card Fraud Detection
 
-Overview
+## Overview
+This project focuses on detecting fraudulent credit card transactions using machine learning techniques. The goal is to identify fraudulent transactions and help financial institutions reduce losses, enhance security, and maintain customer trust.
 
-This project focuses on detecting fraudulent credit card transactions using machine learning techniques. By identifying fraudulent transactions, the model aims to help financial institutions reduce losses, enhance security, and maintain customer trust.
+## Objectives
+- Analyze credit card transaction data to identify fraudulent transactions.
+- Handle data imbalance using techniques like SMOTE.
+- Compare various machine learning models for effective fraud detection.
+- Build a solution to reduce financial losses and false positives.
 
-Objectives
+## Methodology
 
-Analyze credit card transaction data to identify fraud.
-Handle data imbalance using advanced techniques like SMOTE.
-Compare different machine learning models to find the most effective method for detecting fraud.
-Build a solution that reduces financial loss and false positives for legitimate transactions.
-Methodology
+### 1. Data Collection and Preparation
+- **Dataset**: 1.85 million credit card transactions, with 9651 labeled as fraudulent.
+- **Data Cleaning**: Handled missing values, dropped irrelevant columns, and converted timestamps into useful features such as transaction time, day, and month.
+- **Imbalance**: Fraud accounts for only 0.52% of the dataset, requiring specialized techniques to balance the dataset during model training.
 
-Data Collection and Preparation
-The dataset consists of over 1.85 million credit card transactions, with 9651 labeled as fraudulent.
-Data cleaning steps included handling missing values, dropping irrelevant columns, and converting transaction timestamps into useful features such as transaction time, month, and day.
-The data was highly imbalanced, with fraud making up only 0.52% of the total transactions, requiring special handling during model training.
-Feature Engineering
-Extracted time-based features like transaction hour, day of the week, and week number.
-Created dummy variables for categorical features such as POS locations.
-Applied feature scaling to normalize the data for model training.
-Handling Imbalanced Data
-Techniques like SMOTE (Synthetic Minority Over-sampling Technique) and under-sampling were applied to balance the fraud and non-fraud classes.
-SMOTE generated synthetic fraud cases to help the model better learn patterns of fraudulent activity.
-Model Building
-Various machine learning algorithms were tested, including:
-Logistic Regression
-K-Nearest Neighbors (KNN)
-Decision Tree
-Random Forest
-AdaBoost
-Random Forest and AdaBoost performed best in handling the data imbalance, while KNN struggled due to computational cost.
-Model Evaluation
-GridSearchCV was used for hyperparameter tuning to improve model performance.
-The Random Forest model was the best performer, achieving:
-Train Accuracy: 0.92
-Test Accuracy: 0.88
-Recall: 79%
-ROC-AUC: 0.985
-Results
+### 2. Feature Engineering
+- Extracted time-based features like hour, day of the week, and week number.
+- Created dummy variables for categorical data (e.g., POS locations).
+- Applied feature scaling for normalization.
 
-The project successfully developed a model that can identify fraudulent transactions with 79% recall, significantly reducing false negatives and improving fraud detection.
-Financial losses from fraudulent transactions were reduced by $395,946 monthly after deploying the model.
-Challenges and Limitations
+### 3. Handling Imbalanced Data
+- **SMOTE (Synthetic Minority Over-sampling Technique)** was applied to balance the classes by generating synthetic fraud cases.
+- Under-sampling was used to reduce the number of non-fraud cases.
 
-Dealing with the highly imbalanced dataset was a significant challenge, requiring advanced resampling techniques.
-Traditional machine learning models like KNN were computationally expensive due to the large dataset size.
-The model's performance is affected by its inability to capture more complex fraud patterns beyond the data it was trained on.
-Future Work
+### 4. Model Building
+- Models used:
+  - **Logistic Regression**
+  - **K-Nearest Neighbors (KNN)**
+  - **Decision Tree**
+  - **Random Forest**
+  - **AdaBoost**
+- **Random Forest** and **AdaBoost** models performed the best, especially when handling imbalanced data.
 
-Refining the model by incorporating additional features and real-time transaction data for improved fraud detection.
-Experimenting with more advanced models such as XGBoost and deep learning techniques like LSTM to capture temporal patterns.
-Implementing anomaly detection methods for continuous learning from new data.
-References
+### 5. Model Evaluation
+- **GridSearchCV** was used for hyperparameter tuning.
+- The **Random Forest** model achieved the best performance with:
+  - **Train Accuracy**: 92%
+  - **Test Accuracy**: 88%
+  - **Recall**: 79%
+  - **ROC-AUC**: 0.985
 
-D. Wang, "Credit Card Fraud Detection: A Survey," Journal of Data Science, vol. 5, 2022.
-G. Kumar, "Imbalanced Dataset Solutions for Fraud Detection," in IEEE Transactions, vol. 4, 2021.
-(Refer to the full project documentation for additional references and detailed analysis.)
+## Results
+- The model successfully detected 79% of fraudulent transactions, reducing false negatives.
+- Financial losses from fraudulent transactions were reduced by **$395,946** per month after deploying the model.
 
-Contact
+## Challenges and Limitations
+- Dealing with the highly imbalanced dataset required advanced resampling techniques.
+- Computationally expensive models like KNN were not feasible due to the large dataset size.
+- The model's performance may be limited when generalizing to new, unseen fraud patterns beyond the training data.
 
-For more information or collaboration, please contact:
+## Future Work
+- Improve the model by incorporating additional features and real-time transaction data for better fraud detection.
+- Explore more advanced techniques such as **XGBoost** and **deep learning models** to capture more complex fraud patterns.
+- Implement anomaly detection methods for continuous learning from new data.
 
-Namia Modamed Ali
-Email: nami29221@gmail.com
+## Technologies Used
+- **Python**
+- **Pandas**, **NumPy** for data manipulation
+- **Matplotlib**, **Seaborn** for data visualization
+- **Scikit-learn** for machine learning models and evaluation metrics
+- **Imbalanced-learn** (SMOTE) for handling data imbalance
 
+## Installation and Setup
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/username/credit-card-fraud-detection.git
